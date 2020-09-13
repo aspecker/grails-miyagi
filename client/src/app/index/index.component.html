@@ -1,34 +1,35 @@
-<div class="svg" role="presentation">
-  <div class="grails-logo-container">
-    <img class="grails-logo" src="../../images/grailsplusangular.svg" alt="Grails plus Angular"/>
-  </div>
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
 </div>
-
-<div id="content" role="main">
-  <section class="container colset-2-its">
-    <h1 style="text-align:center;">Welcome to Grails</h1>
-
-    <p>
-      Congratulations, you have successfully started your first Grails application! At the moment
-      this is the default page, feel free to modify it to either redirect to a controller or display
-      whatever content you may choose. Below is a list of controllers that are currently deployed in
-      this application, click on each to execute its default action:
-    </p>
-
-    <div id="controllers" role="navigation">
-      <h2>Available Controllers:</h2>
-      <ul>
-        <li *ngFor="let c of controllers">
-          <div [ngSwitch]="hasRoute(c.logicalPropertyName)">
-            <a *ngSwitchCase="true" [routerLink]="'/' + c.logicalPropertyName">{{c.name}}</a>
-            <a *ngSwitchCase="false" [href]="serverUrl + c.logicalPropertyName">{{c.name}}</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-</div>
-
-<footer class="footer row" role="contentinfo">
-    TEST
-</footer>
