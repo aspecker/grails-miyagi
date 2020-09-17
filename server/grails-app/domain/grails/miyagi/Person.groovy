@@ -8,5 +8,6 @@ class Person {
 
     static constraints = {
       name: maxSize 255
+      address: maxSize 255
     }
 }

@@ -8,9 +8,12 @@ class PersonController {
 	static responseFormats = ['json', 'xml']
 	
     def index() {
+
     }
 
-    def list() {
-      render "foo";
+    def save() {
+      def p = new Person(name: "Fred", dob: "12/31/1990", address: "123 Fake St")
+      p.save()
     }
+
 }

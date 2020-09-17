@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import {Route, Router} from '@angular/router';
-import {MatTableModule} from '@angular/material/table';
 import { environment } from '../../environments/environment';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PersonService } from './person.service';
 
 export interface Person {
@@ -36,5 +36,19 @@ export class IndexComponent implements OnInit {
     // this.personService.getPersonData().subscribe(applicationData => {
     //   console.log(applicationData)
     // });
+  }
+}
+
+@Component({
+  selector: 'add-person-dialog',
+  templateUrl: 'add-person-dialog.html'
+})
+export class AddPersonDialog {
+  constructor(
+    public dialogRef: MatDialogRef<AddPersonDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
