@@ -7,8 +7,6 @@ class Person {
     String address
 
     static constraints = {
-      firstName()
-      birthDate()
-      address()
+      name: maxSize 255
     }
 }
