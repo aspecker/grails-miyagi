@@ -39,16 +39,17 @@ export class IndexComponent implements OnInit {
   }
 }
 
-@Component({
-  selector: 'add-person-dialog',
-  templateUrl: 'add-person-dialog.html'
-})
-export class AddPersonDialog {
-  constructor(
-    public dialogRef: MatDialogRef<AddPersonDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-}
+// @Component({
+//   selector: 'add-person-dialog',
+//   templateUrl: 'add-person-dialog.html'
+// })
+// export class AddPersonDialog {
+//
+//   constructor(
+//     public dialogRef: MatDialogRef<AddPersonDialog>,
+//     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+//
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
+// }

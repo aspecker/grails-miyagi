@@ -1,12 +1,8 @@
-import grails.core.*
-import grails.util.*
-import grails.plugins.*
-import org.grails.core.artefact.*
+import grails.miyagi.Person
 
 model {
-	Person person
+	Iterable<Person> personList
 }
 
-json {
-  message "Foo"
-}
+json tmpl.person(personList ?: [])
+
